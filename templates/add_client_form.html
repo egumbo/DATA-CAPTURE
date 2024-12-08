@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Client</title>
+</head>
+<body>
+    <h1>Add a New Client</h1>
+    <form action="/add-client-form" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="client_code">Client Code:</label>
+        <input type="text" id="client_code" name="client_code" required><br><br>
+
+        <button type="submit">Add Client</button>
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .success-message {
+            color: green;
+            font-weight: bold;
+        }
+        button, a {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover, a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a New Client</h1>
+    <form method="post" action="/add-client-form">
+        <label for="name">Client Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Add Client</button>
+    </form>
+
+    <!-- Success message -->
+    {% if message %}
+    <div class="success-message">
+        <p>{{ message }}</p>
+        <script>
+            alert("{{ message }}");
+        </script>
+    </div>
+    {% endif %}
+
+    <!-- Button to view clients -->
+    <a href="/clients/">View All Clients</a>
+</body>
+</html>
